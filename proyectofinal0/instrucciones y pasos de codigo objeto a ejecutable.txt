@@ -1,0 +1,26 @@
+sintaxis y comandos para generar codigo objeto y ejecutable a partir de un archivo de extension .java   :
+nota: al crear el archivo manifest dar aceptar en crear uno nuevo.
+
+javac [nombredelarchivo.java]
+notepad manifest.txt
+
+luego se guarda en el archivo manifest los nombres de las clases siguiendo la sintaxis:
+Main-Class: [nombredelaclaseprincipal]
+Class: [nombredelasotraclasesgeneradas]
+
+jar cvfm [nombre_asignada_por_el_usuario.jar] manifest.txt *.class
+java –jar [nombre_asignada_por_el_usuario.jar]
+
+en el ejemplo solo se debe descargar el archivo ConjuntosEnteros.java
+y luego se copia los siguientes comandos:
+
+javac ConjuntosEnteros.java
+notepad manifest.txt
+
+luego se copia y guarda en el archivo manifest.txt lo siguiente: 
+Main-Class: ConjuntosEnteros.class
+Class: Metodos
+
+luego de guardar la informacion en el manifest se copia y ejecuta los siguientes comandos:
+jar cvfm conjuntosfinal.jar manifest.txt *.class
+java –jar conjuntosfinal.jar
